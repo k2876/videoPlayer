@@ -1,4 +1,4 @@
-const video = document.querySelector("video");
+const video = document.querySelector("#video") as HTMLVideoElement;
 
 video?.addEventListener("click", (e) => {
   if (video?.paused) {
@@ -7,4 +7,7 @@ video?.addEventListener("click", (e) => {
     video?.pause();
   }
 });
-console.log(video?.attributes);
+setTimeout(() => {
+  // console.log(video?.duration);
+  console.log(video.src);
+}, 2000);
