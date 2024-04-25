@@ -7,14 +7,74 @@
   </head>
   <body>
     <img src="/images/picture.png" id="pic" />
-    <video src="/images/video.mp4" id="video"></video>
+    <div id="play"></div>
+    <video id="video"></video>
+    <div id="progressbar-container">
+      <div id="button">재생</div>
+      <div id="time">0:00 / 0:00</div>
+      <div id="progress-bar">
+        <div id="progress"></div>
+      </div>
+    </div>
   </body>
   <style>
-    #pic {
+    body {
+      position: relative;
       width: 300px;
+      height: 170px;
     }
+    #pic {
+      height: 100%;
+      width: 100%;
+    }
+    #play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-bottom: 15px solid transparent;
+      border-top: 15px solid transparent;
+      border-left: 25px solid #f00;
+      border-right: 25px solid transparent;
+    }
+
     #video {
-      width: 300px;
+      height: 100%;
+      width: 100%;
+    }
+    #progressbar-container {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background-color: #33333390; /* 바탕색 설정 */
+
+      display: none;
+      box-sizing: border-box; /* padding을 요소 크기에 포함 */
+    }
+    #progress-bar {
+      width: 100%;
+      height: 10px;
+      background-color: #ddd;
+    }
+    #progress {
+      width: 0%;
+      height: 100%;
+      background-color: #f00;
+    }
+    #time {
+      color: #fff;
+      font-size: 5px;
+      white-space: nowrap;
+      padding: 0 5px;
+    }
+    #button {
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      font-size: 8px;
+      white-space: nowrap;
+      border: 1px solid #fff;
     }
   </style>
   <script defer src="./index.js"></script>
